@@ -5,4 +5,4 @@ class Solution:
             if char.isalnum():
                 newStr += char.lower()
                 
-        return True if newStr == newStr[::-1] else False
+        return newStr == newStr[::-1]
