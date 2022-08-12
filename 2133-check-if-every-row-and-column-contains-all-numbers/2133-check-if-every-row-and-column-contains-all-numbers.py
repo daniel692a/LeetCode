@@ -4,7 +4,7 @@ class Solution:
         column_set = set() # O(n)
         
         ## check columns
-        for i in range(len(matrix)):
+        for i in range(len(matrix)): #O(n^3)
             row_set = set(matrix[i])
             if len(row_set) != len(matrix):
                 return False
