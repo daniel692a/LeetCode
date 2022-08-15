@@ -6,24 +6,21 @@ class Solution:
         elif len(needle)>len(haystack):
             return -1
         
-        n_ptr, h_ptr = 0, 0 # O(1)
+        j = 0 # O(1)
         
         def isTheSame(a, b) -> bool:
             return a==b
         
-        for i in range(len(haystack)): # O(n)
+        for i in range(len(haystack)-len(needle)+1): # O(n)
             
-            if haystack[i]==needle[0]:
-                h_ptr = i
-                while n_ptr<len(needle):
-                    if (h_ptr < len(haystack) and (n_ptr == len(needle)-1) and isTheSame(needle[n_ptr], haystack[h_ptr])):
-                        return i
-                    elif ((h_ptr < len(haystack)) and isTheSame(needle[n_ptr], haystack[h_ptr])):
-                        h_ptr+=1
-                        n_ptr+=1
-                    else:
-                        n_ptr=0
-                        break
+            while j < len(needle):
+                if not isTheSame(needle[j], haystack[j+i]):
+                    break
+                j+=1
 
+            if j==len(needle):
+                    return i
+            j=0
+                
         return -1
         
