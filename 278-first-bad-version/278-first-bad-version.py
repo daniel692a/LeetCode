@@ -3,10 +3,9 @@
 
 class Solution:
     def firstBadVersion(self, n: int) -> int:
-        start=1
-        end=n
-        pos = -1
-        while start<=end:
+        start, end = 1, n
+        pos = -1 #O(1)
+        while start<=end: #O(logn)
             mid = start + ((end-start)//2)
             if isBadVersion(mid):
                 pos = mid
