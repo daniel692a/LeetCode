@@ -4,6 +4,8 @@ class Solution:
         for item in nums:
             if item==0:
                 return  0
+            elif item<0:
+                product*=-1
             else:
-                product*=item
+                product*=1
         return -1 if product<0 else 1
