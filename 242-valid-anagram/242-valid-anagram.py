@@ -2,8 +2,8 @@ class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s)!=len(t):
             return False
-        chars1, chars2 = {}, {}
-        for i in range(len(s)):
+        chars1, chars2 = {}, {} # O(n)
+        for i in range(len(s)): # O(n)
             if not (s[i] in chars1):
                 chars1[s[i]]=0
             else:
@@ -14,7 +14,7 @@ class Solution:
             else:
                 chars2[t[i]] += 1
         
-        for key in chars1:
+        for key in chars1: # O(k) k -> keys or characters
             if key in chars2:
                 if chars2[key] != chars1[key]:
                     return False
