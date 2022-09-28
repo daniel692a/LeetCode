@@ -2,8 +2,8 @@ class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
         answer = []
         l = r = 0
-        queueMax = collections.deque()
-        while r<len(nums):
+        queueMax = collections.deque() # O(n)
+        while r<len(nums): # O(n)
             while queueMax and nums[queueMax[-1]] < nums[r]:
                 queueMax.pop()
             queueMax.append(r)
