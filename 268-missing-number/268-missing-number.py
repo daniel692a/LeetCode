@@ -4,5 +4,5 @@ class Solution:
         cumulative_sum = 0
         for item in nums: #O(n)
             cumulative_sum += item
-        return 0 if cumulative_sum==complete_sum else complete_sum-cumulative_sum
+        return complete_sum-cumulative_sum
         
