@@ -4,8 +4,8 @@ public:
         int answer = 0;
         int i=0;
         int count = 0;
-        char current = '1';
-        while(i<s.size()){
+        char current = '1'; //O(1)
+        while(i<s.size()){ //O(n)
             if(current==s[i]){
                 i++;
                 count = 1;
